@@ -1,0 +1,12 @@
+Static artifact checks only; C++ and hardware not executed.
+test_core_hardware_independent (__main__.ArtifactChecks.test_core_hardware_independent) ... ok
+test_no_api_invention (__main__.ArtifactChecks.test_no_api_invention) ... ok
+test_no_insecure_tls (__main__.ArtifactChecks.test_no_insecure_tls) ... ok
+test_no_literal_wifi_credentials (__main__.ArtifactChecks.test_no_literal_wifi_credentials) ... ok
+test_safety_gates_default_false (__main__.ArtifactChecks.test_safety_gates_default_false) ... ok
+test_scenario_contains_offline_fault_and_manual (__main__.ArtifactChecks.test_scenario_contains_offline_fault_and_manual) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK

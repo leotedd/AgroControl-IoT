@@ -1,0 +1,37 @@
+{
+  "name": "agrocontrol-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:real": "vite --mode real",
+    "dev:movil": "vite --mode movil",
+    "dev:demo:red": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "preview": "vite preview",
+    "build:real": "tsc --noEmit && vite build --mode real --outDir dist-real"
+  },
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "recharts": "2.15.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.0.9",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "@vitejs/plugin-basic-ssl": "1.2.0",
+    "@vitejs/plugin-react": "4.3.4",
+    "tailwindcss": "4.0.9",
+    "typescript": "5.7.3",
+    "vite": "6.2.0",
+    "vitest": "^3.0.5"
+  },
+  "engines": {
+    "node": ">=22.12.0 <25"
+  }
+}

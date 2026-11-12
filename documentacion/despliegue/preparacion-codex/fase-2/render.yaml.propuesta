@@ -1,0 +1,33 @@
+# Referencia de revisión; no crea servicios y no debe activarse antes de aprobar los pendientes.
+services:
+  - type: web
+    name: agrocontrol-demo
+    runtime: node
+    plan: free
+    autoDeploy: false
+    buildCommand: cd frontend && npm ci --include=dev && npm run build:real && cd ../backend && npm ci --include=dev && npm run build
+    startCommand: cd backend && npm run start:compiled
+    healthCheckPath: /api/v1/salud
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_MOTOR
+        value: postgres
+      - key: HOST
+        value: 0.0.0.0
+      - key: SERVIR_FRONTEND
+        value: ../frontend/dist-real
+      - key: PERMITIR_ENCENDIDO
+        value: 'false'
+      - key: DATABASE_URL
+        sync: false
+      - key: DB_SSL
+        value: 'true'
+      - key: DB_SSL_CA
+        sync: false
+      - key: JWT_SECRETO
+        sync: false
+      - key: CORS_ORIGENES
+        sync: false
+      - key: TRUST_PROXY
+        value: loopback

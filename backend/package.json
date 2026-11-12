@@ -1,0 +1,59 @@
+{
+  "name": "agrocontrol-backend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "build": "tsc -p tsconfig.build.json && node scripts/copiar-runtime.mjs",
+    "start:compiled": "node dist/src/server.js",
+    "start:movil": "node scripts/iniciar-movil.mjs",
+    "verificar:compiled": "node dist/scripts/verificar-entorno.js",
+    "test:http": "node scripts/prueba-http.mjs",
+    "verificar": "tsx scripts/verificar-entorno.ts",
+    "typecheck": "tsc --noEmit",
+    "db:seed": "tsx scripts/seed.ts",
+    "token:rotar": "tsx scripts/rotar-token.ts",
+    "secreto:jwt": "tsx scripts/rotar-jwt.ts",
+    "admin:contrasena": "tsx scripts/cambiar-contrasena.ts",
+    "simulador": "tsx scripts/simulador-esp32.ts",
+    "test": "node scripts/pruebas-con-bd-temporal.mjs",
+    "test:seguro": "vitest run --config vitest.safe.config.ts",
+    "build:cloud": "node scripts/build-cloud.mjs",
+    "start:cloud": "node scripts/start-cloud.mjs",
+    "test:pg": "node scripts/pruebas-con-pg-temporal.mjs",
+    "test:todos": "npm test && npm run test:pg",
+    "demo:local": "node scripts/demo-local.mjs",
+    "demo:comprobar": "node scripts/demo-local.mjs --comprobar"
+  },
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "cookie-parser": "1.4.7",
+    "dotenv": "16.4.7",
+    "express": "4.21.2",
+    "express-rate-limit": "7.5.0",
+    "helmet": "8.0.0",
+    "jsonwebtoken": "9.0.2",
+    "mysql2": "3.12.0",
+    "pg": "8.16.3",
+    "zod": "3.24.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "2.4.6",
+    "@types/cookie-parser": "1.4.8",
+    "@types/express": "4.17.21",
+    "@types/jsonwebtoken": "9.0.7",
+    "@types/node": "22.10.5",
+    "@types/pg": "8.15.5",
+    "@types/supertest": "6.0.2",
+    "embedded-postgres": "17.5.0-beta.15",
+    "supertest": "7.0.0",
+    "tsx": "4.19.2",
+    "typescript": "5.7.3",
+    "vitest": "3.0.5"
+  },
+  "engines": {
+    "node": ">=22.12.0 <25"
+  }
+}

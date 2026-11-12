@@ -1,0 +1,152 @@
+[
+  {
+    "nombre": "Actualiza sin recargar (valor cambia en vivo)",
+    "ok": true,
+    "extra": "44.0% → 43.7%"
+  },
+  {
+    "nombre": "0 % → Suelo seco",
+    "ok": true,
+    "extra": "num=0.0% estado=Suelo seco aguja=0°"
+  },
+  {
+    "nombre": "9.1 % → Suelo seco",
+    "ok": true,
+    "extra": "num=9.1% estado=Suelo seco aguja=16.38°"
+  },
+  {
+    "nombre": "29.9 % → Suelo seco",
+    "ok": true,
+    "extra": "num=29.9% estado=Suelo seco aguja=53.82°"
+  },
+  {
+    "nombre": "30 % → Humedad adecuada",
+    "ok": true,
+    "extra": "num=30.0% estado=Humedad adecuada aguja=54°"
+  },
+  {
+    "nombre": "55 % → Humedad adecuada",
+    "ok": true,
+    "extra": "num=55.0% estado=Humedad adecuada aguja=99°"
+  },
+  {
+    "nombre": "55.1 % → Suelo muy húmedo",
+    "ok": true,
+    "extra": "num=55.1% estado=Suelo muy húmedo aguja=99.18°"
+  },
+  {
+    "nombre": "100 % → Suelo muy húmedo",
+    "ok": true,
+    "extra": "num=100.0% estado=Suelo muy húmedo aguja=180°"
+  },
+  {
+    "nombre": "Tooltip se abre con foco de teclado",
+    "ok": true,
+    "extra": "Suelo seco · 0 a menos de 30 %\nPor debajo del 30 % la tierra"
+  },
+  {
+    "nombre": "Tooltip se cierra con Esc",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "nombre": "Volver a la lectura simulada",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "nombre": "Lectura inválida: no muestra porcentaje",
+    "ok": true,
+    "extra": "—"
+  },
+  {
+    "nombre": "Lectura inválida: aguja oculta",
+    "ok": true,
+    "extra": "0"
+  },
+  {
+    "nombre": "Lectura inválida: estado textual",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "nombre": "Lectura inválida: sin zona destacada en la leyenda",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "nombre": "Bloqueo de seguridad visible",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "nombre": "Suelo seco + bloqueo: avisa que no regará",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "nombre": "Escritorio claro sin errores de consola",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "nombre": "Tema oscuro aplicado",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "nombre": "ESP32 desconectado: estado distinto de \"funcionando\"",
+    "ok": true,
+    "extra": "Sensor desconectado"
+  },
+  {
+    "nombre": "Escritorio oscuro sin errores de consola",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "nombre": "390px dark: sin desborde horizontal",
+    "ok": true,
+    "extra": "0px"
+  },
+  {
+    "nombre": "390px dark: tarjeta dentro de la pantalla",
+    "ok": true,
+    "extra": "{\"x\":16,\"y\":696.25,\"width\":358,\"height\":1221.640625}"
+  },
+  {
+    "nombre": "390px dark: sin errores de consola",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "nombre": "390px light: sin desborde horizontal",
+    "ok": true,
+    "extra": "0px"
+  },
+  {
+    "nombre": "390px light: tarjeta dentro de la pantalla",
+    "ok": true,
+    "extra": "{\"x\":16,\"y\":696.25,\"width\":358,\"height\":1206.140625}"
+  },
+  {
+    "nombre": "390px light: sin errores de consola",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "nombre": "768px light: sin desborde horizontal",
+    "ok": true,
+    "extra": "0px"
+  },
+  {
+    "nombre": "768px light: tarjeta dentro de la pantalla",
+    "ok": true,
+    "extra": "{\"x\":24,\"y\":733,\"width\":720,\"height\":756.734375}"
+  },
+  {
+    "nombre": "768px light: sin errores de consola",
+    "ok": true,
+    "extra": ""
+  }
+]

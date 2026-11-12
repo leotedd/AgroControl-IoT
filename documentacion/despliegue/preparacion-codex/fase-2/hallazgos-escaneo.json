@@ -1,0 +1,37 @@
+[
+  {
+    "archivo": "backend/scripts/rotar-jwt.ts",
+    "linea": 23,
+    "estado": "revisión pendiente; valor omitido"
+  },
+  {
+    "archivo": "backend/scripts/rotar-jwt.ts",
+    "linea": 31,
+    "estado": "revisión pendiente; valor omitido"
+  },
+  {
+    "archivo": "documentacion/CONTRATO_API_IOT.md",
+    "linea": 210,
+    "estado": "revisión pendiente; valor omitido"
+  },
+  {
+    "archivo": "documentacion/despliegue/auditoria-claude/fase-2/CONTRATOS_TECNICOS_CODEX.md",
+    "linea": 184,
+    "estado": "revisión pendiente; valor omitido"
+  },
+  {
+    "archivo": "documentacion/historial/CONTRATO_API_IOT_1.0.0-rc2.md",
+    "linea": 113,
+    "estado": "revisión pendiente; valor omitido"
+  },
+  {
+    "archivo": "documentacion/historial/CONTRATO_API_IOT_1.0.0.md",
+    "linea": 167,
+    "estado": "revisión pendiente; valor omitido"
+  },
+  {
+    "archivo": "documentacion/historial/CONTRATO_API_IOT_1.0.1.md",
+    "linea": 203,
+    "estado": "revisión pendiente; valor omitido"
+  }
+]

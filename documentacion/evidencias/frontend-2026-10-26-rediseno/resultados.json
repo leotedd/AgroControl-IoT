@@ -1,0 +1,732 @@
+[
+  {
+    "grupo": "demo",
+    "ancho": 375,
+    "seccion": "panel",
+    "anchoDispositivo": 375,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 375,
+    "seccion": "historial",
+    "anchoDispositivo": 375,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 375,
+    "seccion": "alertas",
+    "anchoDispositivo": 375,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 375,
+    "seccion": "dispositivo",
+    "anchoDispositivo": 375,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 375,
+    "errores_consola": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 390,
+    "seccion": "panel",
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 390,
+    "seccion": "historial",
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 390,
+    "seccion": "alertas",
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 390,
+    "seccion": "dispositivo",
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 390,
+    "errores_consola": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 430,
+    "seccion": "panel",
+    "anchoDispositivo": 430,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 430,
+    "seccion": "historial",
+    "anchoDispositivo": 430,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 430,
+    "seccion": "alertas",
+    "anchoDispositivo": 430,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 430,
+    "seccion": "dispositivo",
+    "anchoDispositivo": 430,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 430,
+    "errores_consola": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 768,
+    "seccion": "panel",
+    "anchoDispositivo": 768,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 768,
+    "seccion": "historial",
+    "anchoDispositivo": 768,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 768,
+    "seccion": "alertas",
+    "anchoDispositivo": 768,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 768,
+    "seccion": "dispositivo",
+    "anchoDispositivo": 768,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 768,
+    "errores_consola": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 1280,
+    "seccion": "panel",
+    "anchoDispositivo": 1280,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 1280,
+    "seccion": "historial",
+    "anchoDispositivo": 1280,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 1280,
+    "seccion": "alertas",
+    "anchoDispositivo": 1280,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 1280,
+    "seccion": "dispositivo",
+    "anchoDispositivo": 1280,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 1280,
+    "errores_consola": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 1440,
+    "seccion": "panel",
+    "anchoDispositivo": 1440,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 1440,
+    "seccion": "historial",
+    "anchoDispositivo": 1440,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 1440,
+    "seccion": "alertas",
+    "anchoDispositivo": 1440,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 1440,
+    "seccion": "dispositivo",
+    "anchoDispositivo": 1440,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "demo",
+    "ancho": 1440,
+    "errores_consola": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 375,
+    "seccion": "panel",
+    "anchoDispositivo": 375,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 375,
+    "seccion": "historial",
+    "anchoDispositivo": 375,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 375,
+    "seccion": "alertas",
+    "anchoDispositivo": 375,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 375,
+    "seccion": "dispositivo",
+    "anchoDispositivo": 375,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 375,
+    "seccion": "finca",
+    "anchoDispositivo": 375,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 375,
+    "errores_consola": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 390,
+    "seccion": "panel",
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 390,
+    "seccion": "historial",
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 390,
+    "seccion": "alertas",
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 390,
+    "seccion": "dispositivo",
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 390,
+    "seccion": "finca",
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 390,
+    "errores_consola": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 430,
+    "seccion": "panel",
+    "anchoDispositivo": 430,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 430,
+    "seccion": "historial",
+    "anchoDispositivo": 430,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 430,
+    "seccion": "alertas",
+    "anchoDispositivo": 430,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 430,
+    "seccion": "dispositivo",
+    "anchoDispositivo": 430,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 430,
+    "seccion": "finca",
+    "anchoDispositivo": 430,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 430,
+    "errores_consola": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 768,
+    "seccion": "panel",
+    "anchoDispositivo": 768,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 768,
+    "seccion": "historial",
+    "anchoDispositivo": 768,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 768,
+    "seccion": "alertas",
+    "anchoDispositivo": 768,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 768,
+    "seccion": "dispositivo",
+    "anchoDispositivo": 768,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 768,
+    "seccion": "finca",
+    "anchoDispositivo": 768,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 768,
+    "errores_consola": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 1280,
+    "seccion": "panel",
+    "anchoDispositivo": 1280,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 1280,
+    "seccion": "historial",
+    "anchoDispositivo": 1280,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 1280,
+    "seccion": "alertas",
+    "anchoDispositivo": 1280,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 1280,
+    "seccion": "dispositivo",
+    "anchoDispositivo": 1280,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 1280,
+    "seccion": "finca",
+    "anchoDispositivo": 1280,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 1280,
+    "errores_consola": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 1440,
+    "seccion": "panel",
+    "anchoDispositivo": 1440,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 1440,
+    "seccion": "historial",
+    "anchoDispositivo": 1440,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 1440,
+    "seccion": "alertas",
+    "anchoDispositivo": 1440,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 1440,
+    "seccion": "dispositivo",
+    "anchoDispositivo": 1440,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 1440,
+    "seccion": "finca",
+    "anchoDispositivo": 1440,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "grupo": "real-respuestas-de-prueba",
+    "ancho": 1440,
+    "errores_consola": []
+  },
+  {
+    "prueba": "navegacion",
+    "ancho": 390,
+    "pasos": [
+      "Historial:/historial:page",
+      "Alertas:/alertas:page",
+      "Equipo:/dispositivo:page",
+      "Inicio:/panel:page"
+    ]
+  },
+  {
+    "prueba": "navegacion",
+    "ancho": 768,
+    "pasos": [
+      "Historial:/historial:page",
+      "Alertas:/alertas:page",
+      "Equipo:/dispositivo:page",
+      "Inicio:/panel:page"
+    ]
+  },
+  {
+    "prueba": "navegacion",
+    "ancho": 1280,
+    "pasos": [
+      "Historial:/historial:page",
+      "Alertas:/alertas:page",
+      "Equipo:/dispositivo:page",
+      "Inicio:/panel:page"
+    ]
+  },
+  {
+    "prueba": "recorrido-movil",
+    "pasos": [
+      "pieza sensor expandida: true",
+      "condiciones visibles: 8",
+      "diálogo: ¿Cambiar a modo Apagado?",
+      "diálogo cerrado: true",
+      "ayuda umbrales abierta: 1",
+      "período personalizado aplicado: 1"
+    ],
+    "errores_consola": [],
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "prueba": "recorrido-alerta-real-prueba",
+    "ok": true
+  },
+  {
+    "prueba": "teclado",
+    "primero": "Saltar al contenido",
+    "focoTrasSaltar": "contenido",
+    "siguiente": {
+      "el": "ServidorSimuladoDato ahora",
+      "outline": "solid rgb(15, 107, 58)"
+    }
+  },
+  {
+    "prueba": "oscuro",
+    "ancho": 390,
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "prueba": "oscuro",
+    "ancho": 1440,
+    "anchoDispositivo": 1440,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "prueba": "login-backend",
+    "url": "http://127.0.0.1:5174/",
+    "ancho": 390,
+    "contextoSeguro": true,
+    "mensaje": "Email o contraseña incorrectos.",
+    "errores_consola": [],
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "prueba": "login-backend",
+    "url": "http://127.0.0.1:5174/",
+    "ancho": 1440,
+    "contextoSeguro": true,
+    "mensaje": "Email o contraseña incorrectos.",
+    "errores_consola": [],
+    "anchoDispositivo": 1440,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "prueba": "login-backend",
+    "url": "https://172.20.10.7:5175/",
+    "ancho": 390,
+    "contextoSeguro": true,
+    "mensaje": "Email o contraseña incorrectos.",
+    "errores_consola": [],
+    "anchoDispositivo": 390,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  },
+  {
+    "prueba": "login-backend",
+    "url": "https://172.20.10.7:5175/",
+    "ancho": 768,
+    "contextoSeguro": true,
+    "mensaje": "Email o contraseña incorrectos.",
+    "errores_consola": [],
+    "anchoDispositivo": 768,
+    "desborde": 0,
+    "fuera": [],
+    "pequenos": [],
+    "nan": []
+  }
+]

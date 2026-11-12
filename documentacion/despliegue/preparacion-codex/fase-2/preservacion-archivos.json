@@ -1,0 +1,5 @@
+{
+  "archivos_protegidos_comparados": 41,
+  "diferencias": [],
+  "nota": "Línea base parcial; no incluye .env. No se conectó con la MySQL real ni se afirma igualdad de datos por hashes de archivos."
+}

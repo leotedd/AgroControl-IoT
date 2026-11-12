@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+/* Tokens por rol. Los valores cambian por tema; los componentes sólo usan roles. */
+@theme inline {
+  --color-plano: var(--plano);
+  --color-superficie: var(--superficie);
+  --color-hundido: var(--hundido);
+  --color-tinta: var(--tinta);
+  --color-tinta-2: var(--tinta-2);
+  --color-tenue: var(--tenue);
+  --color-rejilla: var(--rejilla);
+  --color-eje: var(--eje);
+  --color-borde: var(--borde);
+  --color-marca: var(--marca);
+  --color-marca-fuerte: var(--marca-fuerte);
+  --color-marca-suave: var(--marca-suave);
+  --color-serie: var(--serie-1);
+  --color-serie-suave: var(--serie-1-suave);
+  --color-ok: var(--ok);
+  --color-aviso: var(--aviso);
+  --color-serio: var(--serio);
+  --color-critico: var(--critico);
+  --color-demo: var(--demo);
+  --color-demo-suave: var(--demo-suave);
+  --color-sobre: var(--sobre);
+  --color-zona-seco: var(--zona-seco);
+  --color-zona-adecuado: var(--zona-adecuado);
+  --color-zona-humedo: var(--zona-humedo);
+  /* Plus Jakarta Sans (Google Fonts) con respaldo del sistema si no hay Internet. */
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  --plano: #f2f5f0;
+  --superficie: #ffffff;
+  --hundido: #edf2eb;
+  --tinta: #0f1a13;
+  --tinta-2: #45514a;
+  --tenue: #5e6962;
+  --rejilla: #e1e7de;
+  --eje: #c3ccc0;
+  --borde: rgba(16, 46, 28, 0.11);
+  --marca: #0f6b3a;
+  --marca-fuerte: #0a5129;
+  --marca-suave: #e3f1e7;
+  --serie-1: #2470cc;
+  --serie-1-suave: rgba(36, 112, 204, 0.12);
+  --ok: #0f9d3a;
+  --aviso: #e8a20c;
+  --serio: #e0794f;
+  --critico: #cf3434;
+  --demo: #6250d6;
+  --demo-suave: #eeebfb;
+  --sobre: #ffffff; /* texto sobre verde, azul o violeta sólidos */
+  /* Zonas del medidor de humedad (seco / adecuado / muy húmedo). */
+  --zona-seco: #d33a3a;
+  --zona-adecuado: #15924a;
+  --zona-humedo: #2470cc;
+  --sombra: 0 1px 2px rgba(16, 46, 28, 0.05), 0 1px 1px rgba(16, 46, 28, 0.03);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --plano: #0b100d;
+    --superficie: #141b16;
+    --hundido: #1c251f;
+    --tinta: #e9efe9;
+    --tinta-2: #b8c4bb;
+    --tenue: #909c93;
+    --rejilla: #25302a;
+    --eje: #36433a;
+    --borde: rgba(220, 255, 230, 0.1);
+    --marca: #4fbf7f;
+    --marca-fuerte: #6fd197;
+    --marca-suave: #14301f;
+    --serie-1: #3987e5;
+    --serie-1-suave: rgba(57, 135, 229, 0.18);
+    --demo: #9085e9;
+    --demo-suave: #221d3d;
+    --sobre: #0b100d;
+    --sombra: none;
+    --zona-seco: #f06b6b;
+    --zona-adecuado: #4fbf7f;
+    --zona-humedo: #4f9bef;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --plano: #0b100d;
+  --superficie: #141b16;
+  --hundido: #1c251f;
+  --tinta: #e9efe9;
+  --tinta-2: #b8c4bb;
+  --tenue: #909c93;
+  --rejilla: #25302a;
+  --eje: #36433a;
+  --borde: rgba(220, 255, 230, 0.1);
+  --marca: #4fbf7f;
+  --marca-fuerte: #6fd197;
+  --marca-suave: #14301f;
+  --serie-1: #3987e5;
+  --serie-1-suave: rgba(57, 135, 229, 0.18);
+  --demo: #9085e9;
+  --demo-suave: #221d3d;
+  --sobre: #0b100d;
+  --sombra: none;
+  --zona-seco: #f06b6b;
+  --zona-adecuado: #4fbf7f;
+  --zona-humedo: #4f9bef;
+}
+
+html,
+body {
+  background: var(--plano);
+  color: var(--tinta);
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Foco visible y uniforme para teclado en todos los controles (no aparece con toque o clic). */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--marca);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+.sombra {
+  box-shadow: var(--sombra);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Franja diagonal que identifica superficies DEMO incluso sin color (CVD / impresión). */
+.franja-demo {
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--demo-suave) 0 10px,
+    transparent 10px 20px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

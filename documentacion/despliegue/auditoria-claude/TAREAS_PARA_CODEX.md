@@ -1,0 +1,143 @@
+# Tareas para Codex — despliegue gratuito y portabilidad a PostgreSQL
+
+- **Fecha:** 2026-11-08 · **Estado:** propuesta. **No iniciar las tareas marcadas ⛔ hasta que el usuario autorice D-1/D-2** (ver PLAN_MIGRACION §Decisiones). Las tareas sin ⛔ son independientes del proveedor y pueden empezar en cuanto el usuario lo indique.
+- **Numeración:** `T-PG-xx` para tareas nuevas; `T-07`, `T-08` y `T-14` son las pendientes de `documentacion/despliegue/TAREAS_CODEX.md`.
+
+## Reglas obligatorias (todas las tareas)
+
+1. No modificar ni conectarse en escritura a la base MySQL local `agrocontrol`. Las pruebas usan sólo instancias temporales aisladas (como `pruebas-con-bd-temporal.mjs`).
+2. `PERMITIR_ENCENDIDO=false` en todo entorno, plantilla y prueba que no verifique explícitamente el rechazo. No tocar `firmware-esp32/` en esta fase.
+3. Sin `DROP`, `TRUNCATE` ni `DELETE` masivo en scripts que puedan apuntar a una base con datos.
+4. No leer, imprimir ni registrar secretos (`.env`, tokens, `DATABASE_URL`). Los mensajes de error no deben repetir valores de configuración.
+5. Doble motor: `DB_MOTOR=mysql` sigue siendo el valor por defecto y su comportamiento no cambia. Toda la suite existente debe seguir pasando en MySQL.
+6. Sin commits ni push; entregar los cambios en el árbol de trabajo y un informe en `documentacion/despliegue/RESULTADOS_CODEX.md` (sección nueva). Sin atribución de autoría ni coautoría a herramientas de IA en código, commits ni documentos.
+7. Cada tarea entrega: archivos tocados, comandos ejecutados con su resultado y pruebas nuevas.
+
+---
+
+## P0 — Independientes del proveedor (pueden empezar ya)
+
+### T-14 · Conectar la validación estricta de `TRUST_PROXY` *(pendiente desde el 2026-11-07)*
+- Integrar `validarTrustProxy` en el esquema zod de `config.ts` (valor por defecto `loopback`).
+- Pruebas que invoquen `config()` con entradas válidas e inválidas (`1`, `true`, `0.0.0.0/0`, `::/0`, CIDR malformado).
+- **Aceptación:** `npm run typecheck`, suite MySQL verde y 37+ casos del validador.
+
+### T-PG-10 · Reducir escrituras por petición del ESP32
+- En `autenticarDispositivo`, actualizar `ultima_conexion_en`/`ultima_ip` sólo si han pasado ≥ 10 s o cambió la IP (condición en el propio `UPDATE … WHERE ultima_conexion_en < NOW(3) - INTERVAL 10 SECOND OR ultima_ip <> ?`).
+- Comprobar que `conexionDe()` (EN_LINEA ≤ 30 s) y `revisarPresencia` (120 s) siguen siendo correctos con esa granularidad.
+- **Aceptación:** pruebas de presencia existentes en verde + prueba nueva: 3 peticiones en 2 s ⇒ 1 sola escritura.
+
+### T-PG-11 · Reducir el tráfico de base de datos y HTTP
+- `bloquearDispositivo`: listar sólo las columnas que usan los llamadores (revisar cada uso; `reconciliarModo`, `crearOrden`, `/iot/ordenes`, `/configuracion/confirmacion`, `registrarArranque`).
+- Revisar otros `SELECT *` en rutas calientes (`/iot/*`, `/dispositivos/:id/estado`).
+- **Aceptación:** suite verde; informe con el tamaño medio de fila antes y después.
+
+### T-PG-12 · Mensaje de «servidor despertando» en el frontend REAL
+- Si `/salud` o la primera petición supera el *timeout*, o devuelve 502/503 del proveedor, mostrar un estado específico con reintento, distinto de «sin conexión». Sin tocar el modo DEMO.
+- **Aceptación:** pruebas Vitest del cliente API; capturas a 390 px.
+
+### T-PG-13 · (Plan alternativo D-7) Servir la SPA desde Express de forma opcional
+- `SERVIR_FRONTEND=<ruta a dist-real>` (desactivado por defecto): `express.static` con caché inmutable para `/assets/*`, *fallback* a `index.html` excepto `/api/*`, y CSP adecuada. No cambia nada si la variable no existe.
+- **Aceptación:** prueba supertest: `/` 200 HTML, `/api/v1/salud` JSON, `/api/x` 404 JSON, `/ruta-spa` HTML.
+
+### T-PG-14 · Rate limit de login por IP+email
+- Clave `sha256(ip + ':' + email.toLowerCase())` en `/auth/login`, conservando además un tope global por IP más alto (p. ej. 30/min).
+- **Aceptación:** pruebas: 6.º intento del mismo email ⇒ 429; otro email desde la misma IP ⇒ permitido hasta el tope global.
+
+### T-07 · `--confirmar-host` en seed y en los scripts contra la base remota *(pendiente)*
+- Los scripts que escriben (`seed`, `rotar-token`, `cambiar-contrasena`, migrador) muestran el host y la base de destino y exigen `--confirmar-host=<host>` idéntico. `--simular` no escribe nada.
+
+### T-08 · Prueba de humo de producción *(pendiente)*
+- `scripts/prueba-humo-produccion.mjs <URL-web> <URL-api>`: `/salud`, login con credenciales pedidas por consola (no por argumentos), refresh con cookie, logout, 404 JSON, CORS ajeno 403, ENCENDER rechazado (422/409), `/iot` sin token 401, `req.secure` efectivo (403 `HTTPS_REQUERIDO` ausente con token válido de prueba opcional). Sin imprimir tokens.
+
+---
+
+## P1 — Portabilidad a PostgreSQL ⛔ (requiere D-1 = B/A/G y D-2 = migrar)
+
+### T-PG-01 · Esquema PostgreSQL
+- `database/postgres/schema.sql`, traducción fiel según `MATRIZ_COMPATIBILIDAD_POSTGRESQL.md` §2–3:
+  - identidades `GENERATED BY DEFAULT AS IDENTITY`; enteros sin signo → tipos mayores con `CHECK >= 0` donde la semántica lo exija;
+  - booleanos como `SMALLINT CHECK (x IN (0,1))` (opción A de la matriz);
+  - ENUM → `TEXT` + `CHECK` con nombre `ck_enum_<tabla>_<col>` (distinto del prefijo `ck_` de los 7 CHECK de negocio, para poder contarlos por separado);
+  - `TIMESTAMPTZ(3)`, `JSONB`, `NUMERIC`;
+  - `UNIQUE (lower(email))`;
+  - trigger genérico `actualizado_en` en las 10 tablas;
+  - `trg_ordenes_inmutables` y `trg_ordenes_sin_borrado` en plpgsql con `IS NOT DISTINCT FROM` y `RAISE EXCEPTION`, mensajes idénticos;
+  - comentario explícito sobre la semántica FK→trigger (§3.3, decisión D-4);
+  - sección de privilegios mínimos como referencia comentada.
+- Sin `DROP`. Debe poder ejecutarse con `psql -v ON_ERROR_STOP=1 --single-transaction`.
+
+### T-PG-02 · Capa de acceso a datos de doble motor
+- `src/db.ts`: interfaz común (`filas`, `fila`, `ejecutar`, `transaccion`, `bloquearDispositivo`) con implementaciones `mysql2` y `pg`.
+- Para `pg`: traducción `?`→`$n` que ignore literales `'…'` (con pruebas unitarias, incluidos `'?'` dentro de cadenas); `ejecutar()` devuelve `{ affectedRows, insertId }` (este último sólo si la sentencia lleva `RETURNING id`); parsers de tipos 20 (int8 → number, error si > 2^53−1) y 1700 (numeric → number); `TimeZone=UTC`; `ssl: { rejectUnauthorized: true, ca }`; `max` de pool configurable (por defecto 5).
+- Reintentos: `40P01`, `40001`, `55P03`. Errores de «servicio caído» en `errores.ts`: `57P01`, `53300`, `08001`, `08006`, más los de red.
+- Configuración: `DB_MOTOR`, `DATABASE_URL` (PostgreSQL) y validación zod sin repetir valores.
+
+### T-PG-03 · Sentencias con dialecto
+Reescribir según la matriz §4.2 (por motor cuando no exista una forma común):
+`iot.ts:180`, `iot.ts:381`, `seguridad.ts:80` (`ON CONFLICT DO NOTHING`); `seguridad.ts:90` (`UPDATE … FROM`); `iot.ts:449` (subconsulta por id); `auth.ts:26`, `auth.ts:55`, `servicio.ts:203`, `:233`, `:277`, `:294` (`CASE` + `make_interval`/multiplicación de `interval`); `tareas.ts:8,11`; `verificacion.ts:81,83`; `panel.ts:268` (`EXTRACT(EPOCH…)`, `COUNT(*) FILTER`); `iot.ts:255` (`$n::boolean`, `FOR UPDATE OF o`); **`servicio.ts:336` (`FOR UPDATE OF a, cc`)**; INSERT con `insertId` → `RETURNING id` (`servicio.ts:202,232`, `seed.ts:63-77`); unificar los `con.query` directos de `panel.ts:201,355,356`.
+- Conservar el orden de las asignaciones del `UPDATE` de `rotarToken` (`servicio.ts:294`) y documentar por qué.
+
+### T-PG-04 · Verificación de esquema por motor
+- `verificacion.ts`: en PostgreSQL usar `current_database()`, `information_schema.tables` (BASE TABLE, esquema actual), `pg_trigger` (no internos) y `pg_constraint` (`contype='c'` y `conname` de la lista exacta de los 7 de negocio).
+- Lista de triggers esperados por motor (2 en MySQL; 2 + 10 de `actualizado_en` en PostgreSQL).
+
+### T-PG-05 · Arnés de pruebas con PostgreSQL efímero
+- `scripts/pruebas-con-pg-temporal.mjs`: PostgreSQL temporal y aislado (paquete `embedded-postgres` fijado a versión exacta, o `initdb`/`pg_ctl` locales si existen), puerto libre, carpeta temporal, borrado al terminar; importa `database/postgres/schema.sql` y ejecuta Vitest con `DB_MOTOR=postgres`.
+- `npm run test:pg` y `npm run test:todos` (MySQL + PostgreSQL).
+- Revisar SQL incrustado en `backend/tests/*.ts` y hacerlo portable.
+
+### T-PG-06 · Pruebas nuevas específicas de PostgreSQL
+1. El trigger bloquea cambiar `parametros`, `tipo`, `expira_en`; bloquea reescribir el ACK; bloquea retroceder contadores; bloquea `DELETE`.
+2. El borrado de un usuario con órdenes **falla** en PostgreSQL (documenta D-4); la baja lógica funciona.
+3. Telemetría duplicada (`ON CONFLICT`) ⇒ `duplicadas` correcto; una FK inválida **no** se silencia.
+4. Ida y vuelta de fechas con milisegundos y `Z`; ETag de configuración estable.
+5. ids de `ordenes_riego` crecientes por dispositivo bajo creación concurrente (10 peticiones paralelas).
+6. Idempotencia concurrente: misma clave en paralelo ⇒ una orden y la misma respuesta (resolver también `23505`/`ER_DUP_ENTRY` → devolver la previa).
+7. `PATCH /actuadores/:id/control` con sensor NULL (LEFT JOIN) funciona.
+8. Email con mayúsculas distintas ⇒ conflicto de unicidad.
+9. `GET /sensores/:id/mediciones` agrupado devuelve números (no strings).
+
+### T-PG-07 · Importador de esquema para PostgreSQL
+- `database/importar-esquema-pg.ps1`: pide la cadena de conexión de forma segura (sin eco), rechaza scripts con `DROP`/`TRUNCATE`, usa `psql --single-transaction -v ON_ERROR_STOP=1`, opción `-SoloComprobar` (17 tablas, triggers y 7 CHECK de negocio), se niega si el esquema ya tiene tablas.
+
+### T-PG-08 · Línea base e informe de integridad (sólo lectura)
+- `scripts/integridad.ts --motor mysql|postgres --salida archivo.json`: por tabla, `COUNT`, `MAX(id)`, huella SHA-256 de las filas canonicalizadas en orden de PK (fechas ISO UTC con ms, numéricos normalizados, booleanos 0/1, JSON con claves ordenadas, NULL explícito); estado de las identidades (`pg_get_serial_sequence` / `last_value`); huérfanos FK; triggers habilitados; hallazgos de `auditarConsistencia`.
+- `scripts/comparar-integridad.mjs a.json b.json` ⇒ exit 0 sólo si todo coincide; informe legible.
+- **Sólo `SELECT`.** Conexión de origen de sólo lectura (MySQL `SET SESSION TRANSACTION READ ONLY`).
+
+### T-PG-09 · Migrador de datos MySQL → PostgreSQL
+- `scripts/migrar-datos.ts --origen <env mysql> --destino <env pg> --confirmar-host=<host destino> [--simular]`:
+  - origen en transacción de **sólo lectura** con instantánea consistente (`START TRANSACTION WITH CONSISTENT SNAPSHOT, READ ONLY`);
+  - destino: se niega si alguna tabla tiene filas; una transacción; `ALTER TABLE … DISABLE TRIGGER USER` durante la carga y `ENABLE` al final (verificado); orden de FK del PLAN §Fase 3; `OVERRIDING SYSTEM VALUE`; segunda pasada para `cerrada_por_orden_id`; `setval` de cada identidad;
+  - ejecuta T-PG-08 en ambos lados al terminar y aborta (ROLLBACK) si no coinciden;
+  - opcional `--inverso` (PostgreSQL → MySQL **temporal o vacío**, nunca sobre `agrocontrol` con datos) para la vuelta atrás.
+- Prueba: MySQL temporal con datos del seed + simulador ⇒ PostgreSQL temporal ⇒ comparación OK.
+
+---
+
+## P2 — Operación ⛔ (tras elegir proveedor)
+
+### T-PG-15 · Retención de mediciones (requiere D-5)
+- Tabla `mediciones_horarias` (o equivalente) + tarea que agrega y después purga los datos crudos de más de N días, por lotes pequeños, con auditoría. Requiere un permiso `DELETE` explícito y acotado en `mediciones` (cambia la política de privilegios: **decisión del usuario**).
+- Tamaño de base visible en el panel de administración o en `npm run verificar`.
+
+### T-PG-16 · Guía de despliegue en Render y Supabase
+- Actualizar `GUIA_PRODUCCION.md` con: build y start de Render (`npm ci --include=dev`), `NODE_VERSION`, *health check*, reescrituras y cabeceras del Static Site, *pooler* de Supabase en modo sesión con `verify-full`, procedimiento de medición de `TRUST_PROXY`, paquete de CA del ESP32, copias `pg_dump` diarias y restauración de prueba.
+- Añadir `engines.node` en `backend/package.json` y `frontend/package.json`.
+- Generalizar `frontend/scripts/validar-despliegue.mjs` para que bloquee marcadores también con `RENDER=true`.
+
+---
+
+## Orden recomendado y estimación
+
+| Bloque | Tareas | Estimación | Dependencias |
+|---|---|---|---|
+| 1 | T-14, T-PG-10, T-PG-11, T-PG-14 | 0,5–1 día | Ninguna |
+| 2 | T-PG-12, T-PG-13, T-07, T-08 | 1 día | Ninguna |
+| 3 ⛔ | T-PG-01, T-PG-02, T-PG-04, T-PG-05 | 1,5–2 días | D-1, D-2 |
+| 4 ⛔ | T-PG-03, T-PG-06, T-PG-07 | 1–1,5 días | Bloque 3 |
+| 5 ⛔ | T-PG-08, T-PG-09 | 1 día | Bloque 3 |
+| 6 ⛔ | T-PG-15, T-PG-16 | 0,5–1 día | D-5, proveedor |
+
+**Puntos de revisión de auditoría:** al cerrar los bloques 1, 3, 4 y 5. Criterio: suite completa en ambos motores, sin hallazgos 🔴 abiertos de la matriz y con la evidencia de comandos adjunta.

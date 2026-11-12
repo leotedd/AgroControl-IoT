@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "author": "AgroControl IoT",
+  "editor": "wokwi",
+  "parts": [
+    {"type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {}},
+    {"type": "wokwi-potentiometer", "id": "soil", "top": 0, "left": 230, "attrs": {"value": "650"}}
+  ],
+  "connections": [
+    ["soil:VCC", "esp:3V3", "red", []],
+    ["soil:GND", "esp:GND.1", "black", []],
+    ["soil:SIG", "esp:34", "green", []],
+    ["esp:TX0", "$serialMonitor:RX", "", []],
+    ["esp:RX0", "$serialMonitor:TX", "", []]
+  ]
+}

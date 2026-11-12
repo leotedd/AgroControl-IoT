@@ -1,0 +1,217 @@
+[
+  {
+    "prueba": "escritorio: selector visible en la barra lateral",
+    "ok": true,
+    "detalle": ""
+  },
+  {
+    "prueba": "escritorio: botón de la barra superior oculto",
+    "ok": true,
+    "detalle": ""
+  },
+  {
+    "prueba": "escritorio Oscuro: fondo",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "escritorio Oscuro: gráfica (rejilla) con colores del tema",
+    "ok": true,
+    "detalle": "rgb(37, 48, 42)"
+  },
+  {
+    "prueba": "escritorio Oscuro: guardado",
+    "ok": true,
+    "detalle": "oscuro"
+  },
+  {
+    "prueba": "escritorio Oscuro: se conserva al recargar",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "escritorio Oscuro: Historial y su gráfica",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13) rgb(37, 48, 42)"
+  },
+  {
+    "prueba": "escritorio Claro: fondo",
+    "ok": true,
+    "detalle": "rgb(242, 245, 240)"
+  },
+  {
+    "prueba": "escritorio Claro: gráfica (rejilla) con colores del tema",
+    "ok": true,
+    "detalle": "rgb(225, 231, 222)"
+  },
+  {
+    "prueba": "escritorio Claro: guardado",
+    "ok": true,
+    "detalle": "claro"
+  },
+  {
+    "prueba": "escritorio Claro: se conserva al recargar",
+    "ok": true,
+    "detalle": "rgb(242, 245, 240)"
+  },
+  {
+    "prueba": "escritorio Claro: Historial y su gráfica",
+    "ok": true,
+    "detalle": "rgb(242, 245, 240) rgb(225, 231, 222)"
+  },
+  {
+    "prueba": "auto: sin data-theme y sin preferencia guardada",
+    "ok": true,
+    "detalle": "[null,null]"
+  },
+  {
+    "prueba": "auto + sistema claro → claro",
+    "ok": true,
+    "detalle": "rgb(242, 245, 240)"
+  },
+  {
+    "prueba": "auto + sistema oscuro → oscuro, sin recargar",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13) rgb(37, 48, 42)"
+  },
+  {
+    "prueba": "auto: color de barra del navegador sigue al sistema",
+    "ok": true,
+    "detalle": "#0b100d"
+  },
+  {
+    "prueba": "auto: se conserva al recargar (sigue al sistema)",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "claro elegido gana al sistema oscuro",
+    "ok": true,
+    "detalle": "rgb(242, 245, 240)"
+  },
+  {
+    "prueba": "390px: botón de tema visible en la barra superior",
+    "ok": true,
+    "detalle": ""
+  },
+  {
+    "prueba": "390px: botón de tema ≥ 40 px",
+    "ok": true,
+    "detalle": "40x40"
+  },
+  {
+    "prueba": "390px Oscuro: aplicado y menú cerrado",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13) menús abiertos=0"
+  },
+  {
+    "prueba": "390px Oscuro: sin desborde",
+    "ok": true,
+    "detalle": "0"
+  },
+  {
+    "prueba": "390px Oscuro: se conserva al recargar",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "390px Oscuro: pantalla historial",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "390px Oscuro: pantalla alertas",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "390px Oscuro: pantalla dispositivo",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "390px: el menú se abre y se cierra al tocar fuera",
+    "ok": true,
+    "detalle": "antes=1 después=0"
+  },
+  {
+    "prueba": "390px Claro: aplicado",
+    "ok": true,
+    "detalle": "rgb(242, 245, 240)"
+  },
+  {
+    "prueba": "390px Automático: aplicado",
+    "ok": true,
+    "detalle": "rgb(242, 245, 240)"
+  },
+  {
+    "prueba": "768px: botón de tema visible en la barra superior",
+    "ok": true,
+    "detalle": ""
+  },
+  {
+    "prueba": "768px: botón de tema ≥ 40 px",
+    "ok": true,
+    "detalle": "40x40"
+  },
+  {
+    "prueba": "768px Oscuro: aplicado y menú cerrado",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13) menús abiertos=0"
+  },
+  {
+    "prueba": "768px Oscuro: sin desborde",
+    "ok": true,
+    "detalle": "0"
+  },
+  {
+    "prueba": "768px Oscuro: se conserva al recargar",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "768px Oscuro: pantalla historial",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "768px Oscuro: pantalla alertas",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "768px Oscuro: pantalla dispositivo",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "768px: el menú se abre y se cierra al tocar fuera",
+    "ok": true,
+    "detalle": "antes=1 después=0"
+  },
+  {
+    "prueba": "768px Claro: aplicado",
+    "ok": true,
+    "detalle": "rgb(242, 245, 240)"
+  },
+  {
+    "prueba": "768px Automático: aplicado",
+    "ok": true,
+    "detalle": "rgb(242, 245, 240)"
+  },
+  {
+    "prueba": "login REAL: selector presente y aplica Oscuro",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "teclado: Enter sobre \"Oscuro\" lo aplica",
+    "ok": true,
+    "detalle": "rgb(11, 16, 13)"
+  },
+  {
+    "prueba": "sin errores de consola ni de página",
+    "ok": true,
+    "detalle": ""
+  }
+]

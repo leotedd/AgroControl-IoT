@@ -1,0 +1,9 @@
+{
+  "buildCommand": "node scripts/validar-despliegue.mjs && npm run build:real",
+  "outputDirectory": "dist-real",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://api.agrocontrol.example/api/:path*" },
+    { "source": "/((?!api(?:/|$)).*)", "destination": "/index.html" }
+  ]
+}

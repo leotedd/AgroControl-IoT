@@ -1,0 +1,130 @@
+{
+  "fecha": "2026-11-12",
+  "node": "24.14.1",
+  "cloud_contactado": false,
+  "hardware_contactado": false,
+  "mysql_real_contactada": false,
+  "comandos": [
+    {
+      "cwd": "backend",
+      "comando": "npm run typecheck",
+      "salida": 0
+    },
+    {
+      "cwd": "frontend",
+      "comando": "npm run typecheck",
+      "salida": 0
+    },
+    {
+      "cwd": "backend",
+      "comando": "npm run build",
+      "salida": 0
+    },
+    {
+      "cwd": "frontend",
+      "comando": "npm run build:real",
+      "salida": 0
+    },
+    {
+      "cwd": "frontend",
+      "comando": "npm test -- --run",
+      "salida": 0,
+      "pruebas": 83
+    },
+    {
+      "cwd": "backend",
+      "comando": "npm run test:todos",
+      "salida": 0,
+      "mysql": {
+        "pruebas": 178,
+        "fallidas": 0
+      },
+      "postgres17": {
+        "pruebas": 178,
+        "fallidas": 0
+      },
+      "unitarias_seguras_incluidas_por_motor": 56,
+      "smoke_compilado_por_motor": true,
+      "seed_idempotente_temporal": true
+    },
+    {
+      "cwd": "backend",
+      "comando": "node scripts/comprobar-config-produccion.mjs",
+      "salida": 0
+    },
+    {
+      "cwd": "backend",
+      "comando": "node scripts/validar-trust-proxy.test.mjs",
+      "salida": 0,
+      "casos": 37
+    },
+    {
+      "cwd": "frontend",
+      "comando": "node scripts/validar-despliegue.test.mjs",
+      "salida": 0,
+      "casos": 11
+    },
+    {
+      "cwd": ".",
+      "comando": "python -B tests/firmware/test_artifacts.py",
+      "salida": 1,
+      "aprobadas": 12,
+      "fallidas": 1,
+      "motivo": "Expectativa textual relay=UNTOUCHED frente a relay=%s; no se modificó firmware ni prueba."
+    },
+    {
+      "cwd": "backend",
+      "comando": "node scripts/escanear-secretos.mjs",
+      "salida": 1,
+      "coincidencias": 7,
+      "valores_omitidos": true
+    },
+    {
+      "cwd": "backend",
+      "comando": "npm audit --omit=dev --json",
+      "salida": 1,
+      "paquetes_afectados": 6,
+      "high": 5,
+      "moderate": 1
+    }
+  ],
+  "aprobacion_arquitectura": "pendiente",
+  "retencion_delete": "no autorizada; no implementada",
+  "reanudacion_presentacion": {
+    "h06": "corregido y comprobado con arranque real del artefacto compilado",
+    "comandos": [
+      {
+        "comando": "npm --prefix backend run build:cloud",
+        "salida": 0
+      },
+      {
+        "comando": "npm --prefix backend run demo:comprobar",
+        "salida": 0
+      },
+      {
+        "comando": "npm --prefix backend run demo:comprobar -- --navegador",
+        "salida": 0
+      },
+      {
+        "comando": "comprobarFrontendDemo() con Chromium local instalado",
+        "salida": 0
+      }
+    ],
+    "frontend_demo": {
+      "url": "http://127.0.0.1:5173/",
+      "http": 200,
+      "modo": "demo",
+      "proceso_iniciado": true
+    },
+    "backend_presentacion": {
+      "comando": "npm --prefix backend run demo:local",
+      "url": "http://localhost:3100/",
+      "datos": "sintéticos temporales",
+      "proceso_de_comprobacion": "finalizado y limpiado"
+    },
+    "mysql_real_contactada": false,
+    "hardware_contactado": false,
+    "cloud_contactado": false,
+    "nota": "No se repitieron las suites completas ya aprobadas. La primera comprobación de texto del modo DEMO usó una expresión incorrecta sobre el módulo Vite; se corrigió la comprobación y se confirmó con navegador real. Se corrigió CORS específico del perfil de presentación."
+  }
+}

@@ -1,0 +1,337 @@
+[
+  {
+    "ruta": "backend/.env.example",
+    "sha256": "0bb23536f45b766779274f6729458a4e9bfff403423d2ea6158b3b955e54d302",
+    "estado": "modificado; sin hash previo en línea base parcial"
+  },
+  {
+    "ruta": "backend/.env.production.example",
+    "sha256": "bbc2d95372b6b3a38a97499b89bb23e34a77270d833f53b8783df4108b3a2f6f",
+    "estado": "modificado; sin hash previo en línea base parcial"
+  },
+  {
+    "ruta": "backend/package-lock.json",
+    "sha256": "b2c3d79a0f4fd4bbd1507bfa99f63a5d687deb061f97bc7dd1b01ca3f8d9f5e8",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/package.json",
+    "sha256": "1b108dcd3c3fa076a74f624c81bf131ddd4e74c7a09d6ae12fe96d9f2927ffc9",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/scripts/build-cloud.mjs",
+    "sha256": "a6521de8517e0dcb9288a5415ad3f222a21aceb238352c6be576487060583493",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/scripts/cambiar-contrasena.ts",
+    "sha256": "b33d31643fa84fef4ef8ccd9184745d0e853a58204acff479b7a096a78620869",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/scripts/comprobar-config-produccion.mjs",
+    "sha256": "9d67e74669ff9697d8e4add72bfa6596913e33fd9b674f45ae923d4a057ff2c1",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/scripts/comprobar-demo.ts",
+    "sha256": "11c19540473956b690e47500b82994be8944318d51f8799e82590524b92cb7b7",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/scripts/copiar-runtime.mjs",
+    "sha256": "2ccbac8d93e1ab92e8fc9f43a3a3a74da2177fb0a9a03952b7be94b5d8295740",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/scripts/demo-local.mjs",
+    "sha256": "6c9a4621583cde3c58565e1717bdaa1ccda4b3bf463c23fe4345a9614f16e8c9",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/scripts/entorno-pruebas.mjs",
+    "sha256": "473aaafd8d69079e12d8caef326e4e4e4bd61c38f57d5359dd47f6a60b4ac9b6",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/scripts/escanear-secretos.mjs",
+    "sha256": "69dd8ccf39359034f07c6d66424544422d7f5ff5645e13c1e89be8ca6880d339",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/scripts/humo-temporal.mjs",
+    "sha256": "780e2e790f1ac15d23ec173ed40e13ea0b17c9cb919d3f12c597cb25b7a75331",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/scripts/pruebas-con-bd-temporal.mjs",
+    "sha256": "8bdc0af08704cbde1d90e7117d962369fd6de82c7e7698cf6bc41373ce8c265f",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/scripts/pruebas-con-pg-temporal.mjs",
+    "sha256": "bfbc4fc8a319110117c3ebd26acf13045026664dee5eff06a672d86e89988e05",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/scripts/seed-demo.ts",
+    "sha256": "014143a0561591dd825527d290fe4b81f003b6f389d523b2ce0c705fcde77d19",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/scripts/seed.ts",
+    "sha256": "7f2becb843ff933adbd63bfaa83c436300755f866eb6169353eb0b8ebdbcfe75",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/scripts/start-cloud.mjs",
+    "sha256": "8fc78e278f61bef4c57be3e9a996cfc1df975b561224ae2374f9f4ab5db2f4e1",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/scripts/validar-trust-proxy.mjs",
+    "sha256": "74de2e9755f9ea0dfbdf728787d8c8dad5738062b2f73dc2646632e02e72c06c",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/scripts/validar-trust-proxy.test.mjs",
+    "sha256": "a7f89d0f53a3070d4a2a2622d1a799299892771807f3acf70d14c813d4cfea93",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/scripts/verificar-demo-navegador.mjs",
+    "sha256": "f1791885d4029e431b1f9a72e8759adf15d9c13bb4becc92fddaf0b87e715294",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/scripts/verificar-entorno.ts",
+    "sha256": "a719f2b570aa8ed371d5473afa8549cad3e5ddbc9c72f2413771cf01b2f85e95",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/app.ts",
+    "sha256": "44094b2722136b26a45700c67a131a02a6072c3fae72bb70c899829dd22f5ff9",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/config.ts",
+    "sha256": "3dcf243e9de179aed0692d985d40f887e5912a6e676e1199ec6c70260764c431",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/db.ts",
+    "sha256": "bdebc01d6add5b7c50f04e61d194bbb25026683b2ea4bc2275f531d673595bdf",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/demo.ts",
+    "sha256": "0394d322e9a58b73b619a45c91447722cfe2fc5f41038d772f16cdeddf42772a",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/src/errores.ts",
+    "sha256": "79f918d87a86fbc4a404772e58b5d3ab4b8ae7224cbc3258faa4e80bee039867",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/frontend.ts",
+    "sha256": "825c1db4ed36ff3fe96c97cb319ae8badf6e6e5ae71c54b4af51297987a555c7",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/src/middlewares/seguridad.ts",
+    "sha256": "8bfdebd5ad96db10f786a129b408601a9f49b7b4d7d628b111f0b3f5d38fa518",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/modulos/auth.ts",
+    "sha256": "163911c26600e0ce28317026f44aa40cc1216ea4643fa25a9edeaf6831f3fe21",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/modulos/iot.ts",
+    "sha256": "df974f3d9d60440e9c88c6472149299025b7a950fc894e3b0e122ada0377a111",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/modulos/panel.ts",
+    "sha256": "f57881a7d464e3790c46ca9c196e453dc2e5caf930cb6cc497e5b3d81c649d11",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/modulos/servicio.ts",
+    "sha256": "e11194c38db2dec8dc091dfde7a79d7cf39cbc399a85e00d2bf8c7d4e812d557",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/presencia.ts",
+    "sha256": "e03a6d014b015c9237dc5795250fbf0a8eb35385e9e282ef86f7e3a1cc103a1c",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/src/server.ts",
+    "sha256": "02cd169c67bc179ba29ccde54cec36741e5bbc74a68d9254869acd616d21d5f7",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/tareas.ts",
+    "sha256": "ab1caaf24c385fc68d84e0a1e2e56527985267968b1b14678fe819d71f725a19",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/util/registro.ts",
+    "sha256": "8505c7a70a21c7b1c4043130c254ac2484baea9172fa445311eb8fd9f542e944",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/src/util/sql.ts",
+    "sha256": "ca92886fd2e704e65becc29a9a7afb6631df1002a74d2bf856543ce50dce28c0",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/src/util/trust-proxy.d.mts",
+    "sha256": "e0ab28ed7d39f7940e2d6db442350c78ebe68dc3b1eb56c1d0107480356681e7",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/src/util/trust-proxy.mjs",
+    "sha256": "d0d4228fb9b23d7212737f07acd4c741d74bcd991e848826a5294577041eaa47",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/src/verificacion.ts",
+    "sha256": "811d9de20069dcb71ab23a28fb3c931514d6c044291664a696dad6efb77ca4e0",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/tests/ayudas.ts",
+    "sha256": "0112e4c0f51d67230fa4dd1cc1e3ad42bbf4fdc0f6308712e2a4cd80ee237788",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/tests/integracion.test.ts",
+    "sha256": "a4ac52a6fa6c91817b658ed1a64ad9a9100f249b95842117b3de7ba7f1bbd718",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/tests/iot.test.ts",
+    "sha256": "fd637b568a3481d9471536c5b6b6aa9789583dbc4ea5cb5ab18b2d687d808fb9",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/tests/panel.test.ts",
+    "sha256": "f6dce31921cfd470e0abaa7015c8ffb1def7f6483cb5f8b33c3cf2a55f848b6d",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/tests/portabilidad.test.ts",
+    "sha256": "819a375628672aa89f55c574d60e071547fdeba2ac8fd575d54b933fbce854c0",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/tests/restricciones.test.ts",
+    "sha256": "a0edb453b555023d832a2da8a517b6481e1e5868d4aa59b9d8f2dc88858be147",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/tests/safe/cloud.test.ts",
+    "sha256": "736b22add0fb599ed55274b0e361e8ad35ce988ed055bc5bb2a29ae931df4248",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/tests/safe/config.test.ts",
+    "sha256": "f54cf83529e82385020d112a96ead1e849d24952812819e543a5e09f543efcbb",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/tests/safe/iot-fast.test.ts",
+    "sha256": "b83172da7876b5b5aa66419e57799b2752f48e7c655da2c9aec7b159bf55f17a",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/tests/safe/postgres-config.test.ts",
+    "sha256": "e89bc988a96379c36a02cd62bcce777ec62128fb9a1d5b223ac5124aeb27cc7a",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/tests/safe/presencia.test.ts",
+    "sha256": "550427428e35d611ed65729d796d88e568ea20ca57fff7f417db6d768bb6e2a0",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/tests/safe/sql.test.ts",
+    "sha256": "b154f20d0bffb1fdd43bbd76317892415fdf0d1241f1f4a96aad6f756550ee16",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "backend/tests/seguridad.test.ts",
+    "sha256": "6f9c8d12bb007ed38147bba841ad0a950422985a73b40cf01947ce2517ac5b22",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/tsconfig.build.json",
+    "sha256": "4b9ae38e819453c436080aeeab131c4d1baf771b01a850e71e029674650600f4",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "backend/vitest.safe.config.ts",
+    "sha256": "2f5fce61bbc5f9f850adac7602e15c244bfd7f0e21ebe7792bb361ba7a15c0b5",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "database/postgres/schema.sql",
+    "sha256": "0c249eb6e15726f74b17f582590781a36441e2c6d803e096ef50a8759fb7d008",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "frontend/index.html",
+    "sha256": "10b1cd0a7c83d7fbe7059edad8a2aefdb4e251d0d7d6c69e6accd3d5eb9fa32c",
+    "estado": "modificado; sin hash previo en línea base parcial"
+  },
+  {
+    "ruta": "frontend/package-lock.json",
+    "sha256": "cd2be6d8666ec9db4cd4dccf1eebee8251c3a769fde22fc872b9a24bd52fecf1",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "frontend/package.json",
+    "sha256": "1a5ff7c7e85547cd98171ec762b147d26dbd8a22ebb64ca387c27dc233e0b6f1",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "frontend/public/tema-inicial.js",
+    "sha256": "28f5ea6d3cb82a26a179942db2e026b0a7245db009da942e93c80fa9e41aba6b",
+    "estado": "nuevo"
+  },
+  {
+    "ruta": "frontend/scripts/validar-despliegue.mjs",
+    "sha256": "8a8e24690d2d5043d467b987019d05410c050d72afa812b9796dbf8726acffda",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "frontend/scripts/validar-despliegue.test.mjs",
+    "sha256": "d68a5d2b5a4abc2030d4de4910e089d7f4189a008dabdba3da4e92545b061784",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "frontend/src/App.tsx",
+    "sha256": "5619bd9752a14441ea5d47e89a0d690be9548e5c3c9b76de194d88bec4edcd1f",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "frontend/src/componentes/Navegacion.tsx",
+    "sha256": "7165290592e39494560ba4e58182aa7623c1cd617c33552cb018db7df9c45282",
+    "estado": "modificado"
+  },
+  {
+    "ruta": "frontend/vite.config.ts",
+    "sha256": "d4b8bee84956d1ba60a6f4f922da11b3d24e140fd61179cff93e095fc35dc0d9",
+    "estado": "modificado; sin hash previo en línea base parcial"
+  },
+  {
+    "ruta": "frontend/vitest.config.ts",
+    "sha256": "5f16b4ae2ea7b3d8e51f8acd041e6bd5413ed52bb73c49f783cf0865d19cd01c",
+    "estado": "nuevo"
+  }
+]
